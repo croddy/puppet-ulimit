@@ -1,5 +1,5 @@
 ################################################################################
-# Time-stamp: <Thu 2017-10-05 13:02 svarrette>
+# Time-stamp: <Wed 2017-12-06 09:53:00-05:00 croddy>
 #
 # File::      <tt>params.pp</tt>
 # Author::    Tom De Vylder, Sebastien Varrette
@@ -32,7 +32,7 @@ class ulimit::params {
 
   # ulimit defaults
   case $::operatingsystem {
-    'RedHat','CentOS','Scientific': {
+    'RedHat','CentOS','Scientific','OracleLinux': {
       if $::operatingsystemmajrelease == '5' {
         # pam package on EL5 doesn't create anything
         $default_ulimits = {}
